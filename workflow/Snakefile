@@ -1,0 +1,13 @@
+from snakemake.utils import min_version
+min_version("6.0")
+
+configfile: "/jpgnv/config/sherlock.yaml"
+
+
+plyze_github = github("juliet29/plyze", path="workflow/Snakefile", tag="v0.1.2")
+
+module plyze:
+    snakefile: plyze_github
+    config: config
+
+use rule * from plyze as plyze_*
