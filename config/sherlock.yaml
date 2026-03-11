@@ -1,6 +1,6 @@
 # on Sherlock, will need to change this config  file
 pathvars:
-  samples_loc: "/jpgnv/samples/"
+  samples_loc: "/jpgnv/samples"
   jpg_loc: "/jpgnv/run/jpg"
   qoi_loc: "/jpgnv/run/qoi"
   shared_loc: "/jpgnv/run/shared"
