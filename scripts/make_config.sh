@@ -14,6 +14,7 @@ cat <<EOF >config/0k1k.yaml
     samples_loc: "/jpgnv/samples/01k"
 EOF
 
+create_config "1k2k"
 create_config "2k3k"
 create_config "3k4k"
 create_config "4k5k"
