@@ -4,7 +4,7 @@ min_version("6.0")
 configfile: "/jpgnv/config/sherlock.yaml"
 
 
-plyze_github = github("juliet29/plyze", path="workflow/Snakefile", tag="v0.1.6")
+plyze_github = github("juliet29/plyze", path="workflow/Snakefile", tag="v0.1.7")
 
 module plyze:
     snakefile: plyze_github
