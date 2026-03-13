@@ -1,0 +1,43 @@
+Bootstrap: docker
+From: astral/uv:python3.13-bookworm-slim
+
+
+
+%environment
+	# Python variable names
+	export JPGNV="/jpgnv"
+	export VIRTUAL_ENV="/jpgnv/.venv"
+	export PATH="/jpgnv/.venv/bin:$PATH"
+	    
+	#  Prevent runtime write attempts
+	export UV_NO_SYNC=1
+
+
+%post 
+  # Install the tools needed to support Python and git, which the uv docker
+  # image does not ship with 
+	apt-get update && apt-get install -y wget git python3-tk libtk8.6 libgomp1
+
+  mkdir /jpgnv
+  mkdir /jpgnv/run
+  mkdir /jpgnv/samples
+
+
+
+%runscript
+  
+    cd /jpgnv
+    ls
+    echo $PWD
+    uv sync
+    echo "About to run in jpgnv for $CONFIG_FILE"
+
+    SMKCMD="uv run snakemake -c 4"
+
+    # JPG
+    $SMKCMD plyze_jpg_create_metrics_target
+    $SMKCMD plyze_jpg_consolidate_target
+
+    # QOI
+    $SMKCMD plyze_qoi_consolidate_target
+  
