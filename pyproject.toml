@@ -4,13 +4,19 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "Juliet Nwagwu Ume-Ezeoke", email = "jnwagwu@stanford.edu" }
+  { name = "Juliet Nwagwu Ume-Ezeoke", email = "jnwagwu@stanford.edu" },
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "ipython>=9.11.0",
     "plyze>=0.1.9",
 ]
 
 [build-system]
 requires = ["uv_build>=0.8.3,<0.9.0"]
 build-backend = "uv_build"
+
+
+[project.scripts]
+jpgnv = "jpgnv.cli.make.main:main"
+jpgnv-studies = "jpgnv.cli.studies:main"
