@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.13"
 resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'win32'",
@@ -1662,7 +1662,7 @@ wheels = [
 
 [[package]]
 name = "plyze"
-version = "0.1.9"
+version = "0.1.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "altair" },
@@ -1675,9 +1675,9 @@ dependencies = [
     { name = "snakemake" },
     { name = "xarray" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/27/31/ccfd1b11dcf802f0a4be4dd81403bd936e8ca7d6158260d227ef6460ea4f/plyze-0.1.9.tar.gz", hash = "sha256:15757cde90535aa363c179841bfe2ece51c3dd8ad00774ac28307d7c548ea1b9", size = 13384, upload-time = "2026-03-12T19:32:44.772Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7e/b4/eef8037ffbccb8d09e6f63d65b71f0987c994a4aa910ae40d3c8ce38bb26/plyze-0.1.15.tar.gz", hash = "sha256:af83f3682ca74ebd7bcc9578ab69732ae4d0117c961597de89e11f54f212ef08", size = 15438, upload-time = "2026-03-19T17:19:37.421Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9f/b7/2a36c9c0b8a2a5e05b627ecda552e98a7f5a2b324d6c93c4bfbb76190b87/plyze-0.1.9-py3-none-any.whl", hash = "sha256:062518d93c9be99548c565516dd98688a45736c02ea24704aeaf599e31b67a18", size = 23716, upload-time = "2026-03-12T19:32:43.961Z" },
+    { url = "https://files.pythonhosted.org/packages/28/d6/a2c6a5d8a108b72d0189c79fdd7d389a5e08900fdd34948f41a65e01b794/plyze-0.1.15-py3-none-any.whl", hash = "sha256:e34b8860ce1a116aa0cd25068e04a700fb7b5be9e5923d4c9940357fb4071bf3", size = 27115, upload-time = "2026-03-19T17:19:38.171Z" },
 ]
 
 [[package]]
