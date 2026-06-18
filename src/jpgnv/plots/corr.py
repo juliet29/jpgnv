@@ -27,9 +27,35 @@ def simple_corr(df, f1: str, f2: str):
         alt.Chart(df)
         .mark_circle()
         .encode(
-            x=alt.X(f1, type="quantitative"),
+            x=alt.X(f1, type="quantitative").scale(zero=False),
             y=alt.Y(f2, type="quantitative").scale(zero=False),
         )
         .properties(width=150, height=150)
         .interactive()
     )
+
+
+def simple_line(df, f1: str, f2: str):
+    return (
+        alt.Chart(df)
+        .mark_line()
+        .encode(
+            x=alt.X(f1, type="quantitative").scale(zero=False),
+            y=alt.Y(f2, type="quantitative").scale(zero=False),
+        )
+        .properties(width=250, height=250)
+        .interactive()
+    )
+
+
+def simple_line_with_error(df, f1: str, f2: str):
+
+    x = alt.X(f1, type="quantitative").scale(zero=False)
+    y_mean = alt.Y(f"mean({f2})", type="quantitative").scale(zero=False)
+    y = alt.Y(f2, type="quantitative").scale(zero=False)
+
+    line = alt.Chart(df).mark_line().encode(x, y_mean)
+
+    band = alt.Chart(df).mark_errorband(extent="ci").encode(x, y)
+    c = (band + line).properties(width=250, height=250)
+    return c

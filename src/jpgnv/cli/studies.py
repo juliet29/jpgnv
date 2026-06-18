@@ -16,6 +16,10 @@ import altair as alt
 
 from jpgnv.plots.components import FacetFeature, strip, jitter, point, histogram
 from jpgnv.plots.corr import scatter_matrix, simple_corr
+from jpgnv.temporal.main import (
+    calc_maxes,
+    max_pressure_plots,
+)
 
 app = App()
 
@@ -121,6 +125,26 @@ def meanshift():
     centers_path = ProjectPaths.cluster.mean_shift / "init" / "center.csv"
 
     apply_kmeans(X, data_path, centers_path)
+
+
+### ------- Pressure collapse ---------
+
+
+@app.command()
+def pr():
+    c = max_pressure_plots(ProjectPaths.temporal.data)
+    c.show()
+
+
+@app.command()
+def dt():
+    c = calc_maxes(ProjectPaths.temporal.data)
+    c.show()
+
+
+@app.command()
+def ca():
+    return calc_maxes(ProjectPaths.temporal.data)
 
 
 ### ------- END COMMANDS ---------

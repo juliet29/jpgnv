@@ -9,7 +9,7 @@ push-tag end:
 
 # -------------- DEPENDENCIES -------------
 update-plyze:
-  uv add plyze --upgrade-package plzye 
+  uv add plyze --upgrade-package plyze 
 
 add-local-plyze:
   uv pip install -e "plyze @ /Users/julietnwagwuume-ezeoke/_UILCode/gqe-phd/fpopt/plyze"

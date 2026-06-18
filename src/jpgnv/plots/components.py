@@ -53,6 +53,19 @@ def histogram(df: pl.DataFrame, feature: str):
     return chart
 
 
+def histogram_nom(df: pl.DataFrame, feature: str, label: str):
+    chart = (
+        alt.Chart(df)
+        .mark_bar()
+        .encode(
+            x=alt.X(feature).scale(zero=False).title(label),
+            y=alt.Y("count()").title("Count"),
+        )
+        .properties(width=WIDTH * 0.5, height=HEIGHT)
+    )
+    return chart
+
+
 PLOT1D = Callable[[pl.DataFrame, str], alt.Chart]
 
 
